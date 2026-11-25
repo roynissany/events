@@ -85,6 +85,7 @@
 
   /* ---------- tiles ---------- */
   .tiles {
+    margin-top: clamp(28px, 4.4vh, 52px);
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(14px, 1.6vw, 24px);
@@ -114,10 +115,10 @@
     animation: rise .9s cubic-bezier(.22,.8,.3,1) forwards;
     transition: border-color .35s ease, background .35s ease, transform .35s cubic-bezier(.22,.8,.3,1), box-shadow .35s ease;
   }
-  .tile:nth-child(1) { animation-delay: .10s; }
-  .tile:nth-child(2) { animation-delay: .18s; }
-  .tile:nth-child(3) { animation-delay: .26s; }
-  .tile:nth-child(4) { animation-delay: .34s; }
+  .tile:nth-child(1) { animation-delay: .28s; }
+  .tile:nth-child(2) { animation-delay: .36s; }
+  .tile:nth-child(3) { animation-delay: .44s; }
+  .tile:nth-child(4) { animation-delay: .52s; }
   .tile::before {
     content: '';
     position: absolute;
@@ -181,7 +182,6 @@
   /* ---------- title under the tiles ---------- */
   .title {
     position: relative;
-    margin-top: clamp(30px, 4.6vh, 56px);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
@@ -191,7 +191,7 @@
     white-space: nowrap;
     text-shadow: 0 6px 40px rgba(0,0,0,.6);
     opacity: 0;
-    animation: rise .9s cubic-bezier(.22,.8,.3,1) .46s forwards;
+    animation: rise .9s cubic-bezier(.22,.8,.3,1) .08s forwards;
   }
   /* soft scrim so the title never sits on the bright pit roofs */
   .title::before {
@@ -206,6 +206,19 @@
     pointer-events: none;
   }
   .title .accent { color: var(--blue); }
+  .tagline {
+    position: relative;
+    margin-top: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #a8cef0;
+    text-shadow: 0 2px 18px rgba(0,0,0,.7);
+    opacity: 0;
+    animation: rise .9s cubic-bezier(.22,.8,.3,1) .16s forwards;
+  }
 
   .corner-logo {
     position: fixed;
@@ -326,7 +339,9 @@
     .tile h2 { font-size: 26px; margin-top: 11px; }
     .tile p { margin-top: 6px; font-size: 13px; max-width: none; }
     .tile .go { margin-top: 10px; }
-    .title { margin-top: 26px; font-size: 7.4vw; }
+    .title { font-size: 7.4vw; }
+    .tagline { margin-top: 9px; font-size: 12.5px; letter-spacing: 0.22em; }
+    .tiles { margin-top: 20px; }
     .corner-logo { position: absolute; height: 34px; bottom: 20px; right: 18px; }
     .bg { background-position: 50% 22%; }
   }
@@ -338,6 +353,9 @@
   <div class="bg"></div>
 
   <div class="content">
+    <div class="title">Events at <span class="accent">Balaton Park.</span></div>
+    <p class="tagline">Pick your style. Let's go wild.</p>
+
     <nav class="tiles">
       <a class="tile" href="https://mice.balatonpark.com">
         <div class="num">01</div>
@@ -368,7 +386,6 @@
       </button>
     </nav>
 
-    <div class="title">Events at <span class="accent">Balaton Park.</span></div>
   </div>
 
   <img class="corner-logo" src="bpc-white-text-logo.png" alt="Balaton Park Circuit">
