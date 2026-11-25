@@ -206,6 +206,7 @@
     pointer-events: none;
   }
   .title .accent { color: var(--blue); }
+  html[lang="hu"] .title { font-size: clamp(18px, 4.5vw, 74px); }
   .tagline {
     position: relative;
     margin-top: 14px;
@@ -324,9 +325,10 @@
     .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .tile { max-height: 30vh; }
     .title { font-size: clamp(26px, 7.2vw, 64px); }
+    html[lang="hu"] .title { font-size: clamp(20px, 5.2vw, 50px); }
   }
   @media (max-width: 640px) {
-    .stage { padding: 5vh 18px 76px; justify-content: flex-start; }
+    .stage { padding: 66px 18px 76px; justify-content: flex-start; }
     .tiles { grid-template-columns: 1fr; gap: 12px; }
     .tile {
       aspect-ratio: auto;
@@ -340,6 +342,7 @@
     .tile p { margin-top: 6px; font-size: 13px; max-width: none; }
     .tile .go { margin-top: 10px; }
     .title { font-size: 7.4vw; }
+    html[lang="hu"] .title { font-size: 5.3vw; }
     .tagline { margin-top: 9px; font-size: 12.5px; letter-spacing: 0.22em; }
     .tiles { margin-top: 20px; }
     .corner-logo { position: absolute; height: 34px; bottom: 20px; right: 18px; }
@@ -417,5 +420,8 @@
     });
   })();
 </script>
+
+<script src="hu.js?v=20261125a"></script>
+<script src="lang.js?v=20261125a"></script>
 
 </body></html>
