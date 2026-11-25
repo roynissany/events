@@ -16,6 +16,6 @@ window.BPC_HU = {
 "Enter <span>→</span>": "Belépés <span>→</span>",
 "Open <span>→</span>": "Megnyitás <span>→</span>",
 "Private Events": "Privát rendezvények",
-"Your event of any kind, small or large.": "Bármilyen rendezvénye, legyen kicsi vagy nagy.",
+"Your event of any kind, small or large.": "Bármilyen alkalomra, legyen az kicsi vagy nagy.",
 "Contact Us <span>→</span>": "Írjon nekünk <span>→</span>"
 };
