@@ -8,6 +8,7 @@ window.BPC_HU = {
 "Car<br>Brands": "Autómárkák",
 "Racing<br>Series": "Verseny-<br>sorozatok",
 "Private": "Privát",
+"Close": "Bezárás",
 "Conferences, incentives, team days and gala dinners.": "Konferenciák, incentive programok, csapatnapok és gálavacsorák.",
 "Launches, driving programmes, expos and test days.": "Bemutatók, vezetési programok, kiállítások és tesztnapok.",
 "The circuit, the facilities and the race weekend spec.": "A pálya, a létesítmények és a versenyhétvége műszaki adatai.",
@@ -15,6 +16,6 @@ window.BPC_HU = {
 "Enter <span>→</span>": "Belépés <span>→</span>",
 "Open <span>→</span>": "Megnyitás <span>→</span>",
 "Private Events": "Privát rendezvények",
-"Your event, small or large, built around you. Tell us what you have in mind and we will shape the circuit, the paddock and the hotel around it.": "Az Ön rendezvénye, legyen kicsi vagy nagy, teljesen Önre szabva. Mondja el, mit képzelt el, és mi a pályát, a paddockot és a szállodát is ehhez igazítjuk.",
+"Your event of any kind, small or large.": "Bármilyen rendezvénye, legyen kicsi vagy nagy.",
 "Contact Us <span>→</span>": "Írjon nekünk <span>→</span>"
 };
