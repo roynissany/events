@@ -421,6 +421,70 @@
   })();
 </script>
 
+<!-- GA4 interaction tracking: where the visitor goes from here -->
+<script>
+(function () {
+  function track(name, params) {
+    params = params || {};
+    params.page_lang = document.documentElement.lang || 'en';
+    if (typeof gtag === 'function') gtag('event', name, params);
+  }
+
+  var DEST = {
+    'mice.balatonpark.com':   'mice',
+    'brands.balatonpark.com': 'brands',
+    'intro.balatonpark.com':  'intro'
+  };
+
+  // a tile title breaks over two lines with a <br>, which has to read as a space: "Car Brands"
+  function label(el, sel) {
+    var n = el.querySelector(sel);
+    if (!n) return '';
+    var c = n.cloneNode(true);
+    Array.prototype.forEach.call(c.querySelectorAll('br'), function (b) {
+      b.parentNode.replaceChild(document.createTextNode(' '), b);
+    });
+    return c.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  // the three Section tiles
+  Array.prototype.forEach.call(document.querySelectorAll('nav.tiles a.tile'), function (a) {
+    a.addEventListener('click', function () {
+      var host = '';
+      try { host = new URL(a.href).hostname.replace(/^www\./, ''); } catch (e) {}
+      track('section_click', {
+        destination: DEST[host] || host,
+        destination_url: a.href,
+        tile: label(a, 'h2'),
+        tile_position: label(a, '.num')
+      });
+    });
+  });
+
+  // the Private tile opens a popup instead of leaving the page
+  var pt = document.getElementById('privateTile');
+  if (pt) pt.addEventListener('click', function () {
+    track('section_click', {
+      destination: 'private',
+      tile: label(pt, 'h2'),
+      tile_position: label(pt, '.num')
+    });
+  });
+
+  // Contact Us inside the Private popup
+  var contact = document.querySelector('#privateModal a.btn');
+  if (contact) contact.addEventListener('click', function () {
+    track('contact_click', { destination: 'private_email', link_type: 'mailto' });
+  });
+
+  // HU / EN switch - the picker is injected by lang.js, so listen on the document
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest ? e.target.closest('.langpick button[data-lang]') : null;
+    if (b) track('lang_switch', { language_to: b.getAttribute('data-lang') });
+  });
+})();
+</script>
+
 <script src="hu.js?v=20261125e"></script>
 <script src="lang.js?v=20261125e"></script>
 
